@@ -1,0 +1,2916 @@
+Programming Fundamentals
+========================
+ 
+Programming Language 
+=====================
+ 
+To interact with system
+To make the machine understand the code
+To make complex problem into simple 
+To develop web application
+ 
+Basic requirement for Learning a Language
+=========================================
+ 
+Variables : [A-Z , a-z, 0 to 9, Special characters]
+Data types
+  Primitive - [ byte, short, int, long, float, double, char, Boolean]
+  Non Primitive - [ String, Arrays, Objects]
+ 
+Reserved words - class, if, else, while, do, for. switch, break, continue
+ 
+Comments - user must aware of the task that the code performs
+           comments lines are ignored by compiler
+ 
+Translation : converting the HLL into LLL
+ 
+Compilation : converts the entire code into machine code
+ 
+Interpretation : Line by line compilation and execution of the code
+ 
+ 
+Java is a programming language
+ 
+public static void main(String args[])
+ 
+main() -- method(entry point)(we cannot use different name for main)
+yes, we can overload the main method.we can write more than one time method by changing the arguments.
+No,we cannot override the main method.Static method can't be overriden.
+main is final in java.
+void ---> returns null
+static ---> static methods are executed without an object
+public --> access modifieor
+args[] --> command line arguments are always of the type String
+ 
+ 
+System.out.println()
+ 
+println() ---> method to print the output in a new line
+out ----> static variable of System class
+System --- Class
+ 
+ 
+Scanner --> used to give runtime input from the user
+Scanner sc = new Scanner(System.in);
+ 
+in --> static variable of System class
+System --- Class
+ 
+sc.nextInt() ---> Integer
+sc.next() ----> String
+sc.nextLine() ----> String array / Sentence
+ 
+Selection -- Line by line execution of the code
+Condition -- if , if else, if else ladder, switch
+Iteration -- while, do..while , for loop
+
+Arrays and Strings
+
+===================
+ 
+Array : It is a homogeneous set of elements that are stored using a single variable.
+ 
+It can also be stated as it stores the data of similar types
+ 
+Declaration of Arrays
+
+======================
+
+int x[];
+
+String[] names;
+ 
+x= new int[5] // it creates memory space // initialization
+ 
+int x[] = { 45,67,89,34,12,91};
+ 
+int size = x.length();returns the size of the array
+ 
+Array elements are accessed by their index value.
+
+Index value starts from Zero
+
+if there are n elements in an array, last element is accessed by n-1.
+ 
+Program to input elements in an array and find the maximum value in it.
+ 
+ 
+public class Array1{
+
+  public static void main(String args[]);
+
+     int x[] = { 45,67,89,34,12,91};
+
+     int max=x[0];
+
+     for(int i=0; i<x.length; i++){
+
+        if(max < x[i]){
+
+             max= x[i];
+
+           }
+
+   }
+
+  System.out.println("The maximum value is "+max);
+
+}
+
+}
+ 
+Strings in Java
+
+================
+
+Strings in java are also called as character array.
+
+Collection of individual characters.
+
+Strings in java can be created in multiple ways
+
+1.  String name = "Hari"  //  String literal
+
+2.  String companyName = new String("Capgemini"); // String Object
+ 
+Strings in java are immutable. 
+
+We cannot change the values.
+
+It is stored in heap memory (String constant pool).
+ 
+String str = "Lahari";
+ 
+char[] c = str.toCharArray() // to split the string into char array.
+
+c[] = {'L','a','h','a','r','i'};
+ 
+byte[] b = str.getBytes() // converts string into  bytes
+
+b[] = { 76, 97, 104 , 97, 114, 105};
+ 
+str.length() --> no of characters in a String
+ 
+ 
+ Object Oriented Programming
+===========================
+ 
+Object : Anything that exists in real world is called as Object (Class room, Table etc)
+Attributes or Class variables or members  : defines the properties of the object (length, breadth ,height)
+ 
+Methods : behaviour of an object or functionality of object ( training(), Coding());
+ 
+Class : Collection of similar objects
+ 
+class Employee{
+   private int empid;
+   private String name;
+   private double Salary;  // members or class variables or attributes
+ 
+   public void input(int id, String ename, double sal // local variables){
+     {
+        this.empid = id;
+	this.name= ename;
+        this.salary=sal;
+     }
+ 
+   public void display(){
+     System.out.println("Employee ID" + empid);
+     System.out.println("Employee Name" + name);
+     System.out.println("Salary" +salary);
+   }
+ 
+public static void main(String args[]){
+    Employee e = new Employee(); // instantiation or Object Creation
+    e.input(1012, "Shyam", 23456.78);
+    e.display();
+    }
+}
+ 
+Java classes have methods
+1. getters and setters
+2. Constructors
+3. toString()
+ 
+Any Java class that contains getters and setters, Constructors, toString() are called as
+Java Bean or Plain Old Java Object (POJO) or Entity Class or Value Object
+ 
+Constructors
+============
+ 
+Any method that has the same name as the class name are called Constructors
+They are executed automatically during instantiation
+They do not return any values as they do not have return type
+They can have parameters and they are called as parameterized Constructor
+Constructor that do not have any arguments or parameters are termed as default Constructor.
+Constructors can be overloaded.
+ 
+class Dept {
+ 
+   private int deptno;
+   private String dname;
+ 
+   Dept(){} // default Constructor
+ 
+   Dept(int dno, String name){
+     this.deptno = dno;
+     this.dname= name;} // parameterized constructor
+ 
+   }
+ 
+Access Modifiers
+=================
+private --> accessible within the class // least visibility
+protected ---> accessible by sub class of same package or sub class of different package
+public -----> accessible anywhere
+default ----> it is accessible by multiple classes within the same package
+ 
+ 
+Final
+=====
+When we declare variable as final value cannot be changed or modified
+When we declare method as final, it cannot be overridden
+When we declare class as final, it cannot be inherited
+ 
+ 
+static
+=======
+ 
+When variable is static , it can be accessed by the class name
+It can be accessed by not static methods
+When method is static, it can be accessed without an object.
+1. Encapsulation
+2. Inheritance
+3. Polymorphism
+4. Abstract class and Interface
+ 
+Encapsulation
+==============
+ 
+Binding of Data members and methods in a class.
+We create an object to access those members and methods
+This process is called as Encapsulation.
+ 
+Ex : Driver is applying a break without knowing the internal
+     working principle.
+ 
+Example : Creating a POJO Class, assigning the values and 
+          displaying them.
+ 
+Inheritance
+=============
+ 
+Deriving an new class from an already existing class.
+Existing class is also called as parent class or Base class or super class
+New class created is child class or derived class or sub class.
+keyword used in inheritance is extends.
+We can extend only one class at a time Why?
+Java does not support multiple inheritance.
+We can access the methods and members of parent class using the child class 
+object.
+
+abstract class 
+----------------------------------------
+abstraction in java - data hiding 
+i.e we will display only the given/provied services to the user and hides the implemention part of that services i.e how it will work
+ 
+If the class is abstract class the abstract keyword should be used with class
+abstract class can contain
+1. abstract methods -- only declaration no implemention
+2. non abstract methods and even static methods and constractor------ parameterized means super()
+3. we can't create object for abstract class   
+ 
+Note :
+1. if the class is decleard as abstract class and it in conatins abstract methods 
+   -- the class which extends that class i.e subclass is responsibale for defining/implemention that class
+   -- other wise it will also become abstract class
+  
+Interface
+What is Interface
+An interface in java is blueprint of the class or behavior ,java interface contain static constants and abstract methods
+in other words
+interface contain incomplete and default methods which other classes must implement
+ 
+Why interface?
+-----> interface is  a mechanism to achieve abstraction mean interface contain abstract methods without body
+-----> through interface we can achieve multiple inheritance (diamond problem)
+----->by using interface we can acieve loose coupling
+----->to implement the interface using implements keyword
+----->interface also represents the IS-A relationship
+ 
+ 
+Relation between class and interface
+ 
+   
+         extends                  implements                             extends
+class ----------->class     class------------>interface        interface---------->interface
+
+ 
+ 
+Note:
+to declare an interface use interface keyword
+a class that implements an interface must implement all methods which declared in interface
+
+Exception
+
+=========
+ 
+An disruption caused during the execution of the code.
+
+It is otherwise called as abnormal termination of the program.
+ 
+Why Exception
+
+=============
+
+Whenever exception occurs, the program will stop executing and gets 
+
+terminated without any reason. As a devloper, we need to handle the 
+
+exception and give appropriate error message to enduser.
+ 
+ 
+Exception class Hirarchy
+
+==========================
+ 
+ 
+							 Object
+
+							   |
+
+|------------------------------------------Throwable---------------------------------------|
+
+Error														  Exception
+ 
+											|----------------------|-------------------|
+
+										builtin Exception                         User-defined 
+
+
+
+								|----------------- | --------------|
+
+							Compile-time				 Runtime Exception
+
+          	                          (Checked Exception)                     (Unchecked Exception)
+
+							IOException						NullPointerException
+
+							ClassNotFoundException				ArrayIndexOutOfBoundsException
+
+							FileNotFoundException
+
+							ArithmaticException
+
+ 
+User-defined Exception : This exception is defined by developer								
+ 
+InvalidAgeException extends Exception
+ 
+Throwable class
+
+================
+ 
+getMessage()
+
+printStackTrace()
+ 
+try, catch, throws, throw,finally
+ 
+Whenever we know that the lines of code is going to throw the exception
+
+It is has be embeded within try and catch.
+ 
+throws : Exception will be handled by the method
+ 
+throw : to throw user-defined exception
+ 
+if exception is handled or not handled, the code withing finally gets executed.
+ 
+ 
+Class Ex{
+ 
+public static void main(String args[]){
+ 
+int x=5, y =0;
+
+int res=0;
+
+try{
+
+     res=x/y;
+
+     System.out.println(res);
+
+   }catch(ArithmeticException e){
+
+	System.out.println("Number cannot be divided by Zero");
+
+   }
+
+}
+
+}
+ 
+ 
+We can have multiple exceptions occuring in a single java program.
+
+Exception that occurs first will be handled and rest of the code will
+
+be ignored by the compiler.
+ 
+ 
+class InvalidAgeException extends Exception{
+
+InvalidAgeException(String message)
+
+{ 
+
+   super(message);
+
+}
+ 
+}
+ 
+ 
+throw new InvalidAgeException("Age is Invalid");
+
+The core advantage of exception handling is to maintain the normal flow of the application.
+monitor-try
+exception-runtime
+
+Collection Framework
+
+import java.util(package)
+=====================
+ 
+Framework: A collection of classes and interfaces that can be implemeneted 
+
+            in our code.
+ 
+Collection : A group of Objects or Multiple elements (Object array)
+ 
+Why Collection
+
+===============
+ 
+Collection Interface has simple method implementations
+
+Reduces the number of lines in a program.
+
+Pre-defined methods can be implemented
+
+Elements can added or deleted in any locations
+
+Size of Collection are dynamic in nature
+ 
+Collection Hirarchy
+
+====================
+ 
+ 
+                                         Collection
+
+          |---------------------------------|---------------------------|
+
+        List					 Set				     Map
+ 
+Collection Interface
+
+=======================
+ 
+add()
+
+remove()
+
+addAll()
+
+contains()
+
+size()
+
+Capacity()
+ 
+List Inteface
+
+===============
+ 
+It is an linear array
+
+It is an ordered collection (Maintians the order of input)
+
+It can contain duplicate values
+
+It can mulitple null values
+
+List implemented classes are ArrayList, LinkedList, Vector, Stack, Queue
+ 
+Set Interface
+
+==============
+ 
+It is also linear array like List
+
+Elements are sorted and stored and hence order of input is not maintaines.
+
+Hence it is an Unordered Collection 
+
+It does not allow duplicate values.
+
+But it can allow only one null value
+
+Set implemented classes are HashSet, TreeSet,LinkedHashSet
+ 
+ 
+Map Interface
+
+==============
+ 
+Data is stored in key-value pairs
+
+Value can be accesses using key
+
+To navigate across the elements in Map are done using
+
+   Keyset() method.
+
+EntrySet interface will split the Map into key and Value.
+
+Map implemented classes are HashMap and TreeMap
+ 
+ 
+Iterator Interface
+
+====================
+ 
+User can iterate through all the elements of the collection
+ 
+ 
+Generics
+
+==========
+ 
+To store elements on any Collection limited to particulate data type.
+
+This will avoid TypecastException
+ 
+Iteration on the Collection are of 4 Types.
+ 
+1. Numerical For ..Loop
+
+2. For Each Loop
+
+3. Iterator Interface
+
+4. ListIterator
+ 
+ 
+ArrayList:
+ 
+The ArrayList class maintains the insertion order and is non-synchronized.
+
+- ArrayList in Java is a resizable array or growable array that implementation of the List interface 
+  which we found in java.util.packages.
+ 
+- The Different between of array and arraylist is that array is a fixed in size but arraylist is a resizable.
+ 
+- If we assigning the value in arraylist it will be store as order. it allows to store duplicate values and stores
+  number of null values.
+ 
+- ArrayList is a Heterogeneous that is we can store different data types.
+ 
+-eg: List l=new ArrayList();
+     l.add("hi");
+     l.add(100);
+(or)
+ 
+- if we want to print same data type means
+ 
+- ArrayList<String> cars = new ArrayList<String>();
+  cars.add("Volvo");
+  cars.add("BMW");
+ 
+- Arraylist methods have
+add();
+addAll();
+remove();
+removeAll();
+isEmpty();
+set();--replace the element at a specific index.
+get();--used to retrieve the element at a certain index.
+indexOf();
+lastIndexOf();
+clear();
+contains();
+sort();
+ 
+
+LINKED LIST(doubly linkedlist)
+-------------
+ 
+1. What is linked list?
+2. What are the features of linked list?
+3. What are the differences between linked list and Array list?
+4. Example for linked list.
+ 
+1. What is linked list?
+The LinkedList class maintains the insertion order and is  not synchronized.
+
+--> linked list is a way to store collection of items. 
+-->Unlike arrays, which store elements in contiguous memory locations, a linked list uses separate objects
+(called nodes) that are linked to each other. 
+-->each node contains two main parts: the data- the value you want to store
+					 	  reference- link the node next to the list
+Example: Imagine you have three boxes (nodes) to store names:
+ 
+Node 1:
+ 
+Data: "Alice"
+Link: Points to Node 2
+Node 2:
+ 
+Data: "Bob"
+Link: Points to Node 3
+Node 3:
+ 
+Data: "Charlie"
+Link: Points to nothing (this means it's the last item)
+ 
+How It Works
+Starting Point: You start at Node 1 and see "Alice."
+Next Step: You look at the link, which tells you to go to Node 2.
+Continue: At Node 2, you find "Bob," and its link points to Node 3.
+Finish Up: At Node 3, you find "Charlie," and the link tells you there’s no more data.
+ 
+[Node 1]-->[Node 2]-->[Node 3]->Null
+Alice       Bob         Charlie
+ 
+2. What are the features of linked list?
+-->Dynamic size
+-->Duplicates are allowed
+-->Maintains Insertion order
+-->Faster Manipulation
+a
+ 
+3.Diference between Linked List and Array list.
+ 
+-->Structure:
+	Array list: Uses dynamic array to store elements.
+	linked list: it uses doubly linked list. which means it uses a series of nodes, where each node contains a 
+			 value and a link to the next node.
+ 
+-->Manipulation: 
+	Array list: Manipulation with ArrayList is slow because it internally uses an array.
+			If any element is removed from the array, all the other elements are shifted in memory.
+	Linked List:Manipulation with LinkedList is faster than ArrayList because it uses a doubly linked list,
+			so no bit shifting is required in memory.
+ 
+-->Contiguous: 
+	Array List:The memory location for the elements of an ArrayList is contiguous.
+	Linked List:The location for the elements of a linked list is not contagious.
+
+Stack is the subclass of vector.
+stack is LIFO.
+Queue is FIFO.(priorityQueue,Deque,ArrayDeque)(NosuchElementException)
+ArrayDeque is faster than ArrayList.
+Vector is similar to ArrayList,But it is synchronized.
+ 
+ 
+ Java 8 Features
+================
+ 
+1. Lambda Expression
+2. Functional Interface
+3. Streams in Java
+4. DateTime classes in Java
+5. Default Methods
+6. Method references
+ 
+Streams in Java(java.util.Stream)
+=================
+ 
+Flow of information or Data from the source to the destination
+Collection of objects in a stream used for imtermediate or terminal operational.
+We can also perform parallel an aggregate operations
+Parallel operations can work in parallel on multicore
+Aggregate operations end up end value.
+ 
+Pipelines of  operations
+=========================
+various opeartions which have been declared to act on streams work together based
+on the concept of pipelines.
+Internal iterations delegate the work of iterating the stream library.
+
+Common Intermediate Operation:
+=============================
+map
+filter
+flatmap
+distinct
+sorted
+limit
+skip
+peek
+
+Terminal Operations
+==========================
+foreach
+collect
+reduce
+count
+Short circuit Operations
+===========================
+anymatch
+allmatch
+nonematch
+findfirst
+findany
+
+
+Java infinite Stream
+=====================
+ 
+Java Stream API provides us to generate infinite stream of Data / Elements
+ 
+There are 2 methods in Java Stream API
+ 
+1. stream.generate()
+2. Stream.iterate()
+
+FUNCTIONAL INTERFACE:
+====================
+->Java has introduced many features in Java 8 but one of the important features related to functional interface is Stream.
+->An Interface that contains exactly one abstract method is known as functional interface. 
+->It can have any number of default, static methods but can contain only one abstract method. 
+->It can also declare methods of object class.
+->Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces.
+->It is a new feature in Java, which helps to achieve functional programming approach.
+ 
+syntax:
+======
+@FunctionalInterface
+interface<interface_name>
+{
+single abstract method();
+}
+ 
+-> Functional Interface are used to define  lamda functions. 
+->Lambda function ia an implementation of functional interface.
+-> Runnable , Callable , Comparable , Comparator are few examples of Functional Interface.
+ 
+Some Built-in Java Functional Interfaces:
+========================================
+Since Java SE 1.8 onwards, there are many interfaces that are converted into functional interfaces.
+All these interfaces are annotated with @FunctionalInterface. 
+These interfaces are as follows –
+ 
+1)Runnable –> This interface only contains the run() method.
+2)Comparable –> This interface only contains the compareTo() method.
+3)ActionListener –> This interface only contains the actionPerformed() method.
+4)Callable –> This interface only contains the call() method.
+ 
+Why do functional interfaces have only one method?
+=================================================
+Whenever you are using the lambda expression for the Function interface, 
+the compiler strictly ensures the interface has only one abstract method.
+If the interface contains more than one abstract method the program shows an error. 
+Because the lambda expression provides a body to only a single abstract method.
+ 
+ 
+why functional interface introduced in java 8?
+===============================================
+Functional Interfaces introduced in Java 8 allow us to use a lambda expression to initiate the interface's method 
+and avoid using lengthy codes for the anonymous class implementation.
+ 
+ 
+Invalid Functional Interface:
+===========================
+A functional interface can extends another interface only when it does not have any abstract method.
+if not it will give compile time error.
+ 
+
+Lambda Expression:
+ 
+	-> Lambda expression is one of the important feature which was introduced in java 8 .
+	-> It is way of reducing the lines of code using functional interface in concise manner.
+	-> In java it is not possible to write concise form of code for every logic so we use Anonymous class
+	   and anonymous function.
+ 
+	->  Syntax:  
+                  The simplest lambda expression contains a single parameter and an      expression:
+ 
+			(parameters) -> expression
+		      lambda expression contains a single parameter and an expression:
+			(parameter1,parameter2) -> { code block};
+ 
+	-> Lambda expressions are implemented using functional interface only.
+Anonymous class:
+ 
+	->It is basically a class without name of class and which is declared in another class.which enables to make our 
+	  code more concise.
+	-> Normal class can implement any number of interfaces but Anonymous class can implement only one class
+	   at a time.
+ 
+public class A
+{
+	public void show()
+	{
+		System.out.println("A class show method");
+	}
+}
+public class B extends A
+{
+	public void show()
+	{
+		System.out.println("B class show method");
+	}
+}
+public class Demo
+{
+	public static void main(String[] args)	
+	{
+		A a=new B();
+		a.show();//B class show method
+	}
+}
+ 
+=======================================================
+ANONYMOUS CLASS
+ 
+abstract class A
+{
+	public abstract void show();
+}
+ 
+public class Demo
+{
+	public static void main(String[] args)	
+	{
+		A a=new A();
+		{
+			public void show()
+			{
+				System.out.println("new class implementation show method");
+			}
+		};
+		a.show();
+	}
+}
+//object creation done for new implementaion of anonymous class.
+=======================================================
+LAMBDA EXPRESSION   
+ 
+@FunctionalInterface
+interface Car
+{
+	public void drive();
+}
+ 
+public class Demo 
+{
+	public static void main(String[] args)	
+	{
+		Car a=()->  
+					System.out.println("new class implementation show method");
+		a.show();
+	}
+}
+=======================================================
+@FunctionalInterface
+interface MyInterface {
+ 
+    
+    String reverse(String n);
+}
+ 
+public class Main {
+ 
+    public static void main( String[] args ) {
+ 
+        
+        MyInterface m = (str) -> {
+ 
+            String result = "";
+            for (int i = str.length()-1; i >= 0 ; i--)
+            result += str.charAt(i);
+            return result;
+        };
+ 
+        
+        System.out.println("Lambda reversed = " + m.reverse("Lambda"));
+    }
+ 
+}
+
+
+1. Method References.
+
+2. Date-Time Class
+
+3. Defualt method
+ 
+Method reference
+
+=================
+ 
+It is the simplified form of Lambda Expression
+
+Instead of wrting Lambda expression with all the details
+
+  like parameter, return type, methodname
+<Class or Instance>::<methodname>
+ 
+1. Method reference to static method of a class
+
+=================================================
+ 
+Ex
+ 
+public class Multiplication {
+
+		public static int multiply(int a, int b) {
+
+			return a*b;
+
+	}
+
+}
+ 
+import java.util.function.BiFunction;
+ 
+public class Main1 {
+ 
+	public static void main(String[] args) {
+
+		BiFunction<Integer, Integer, Integer> product =
+
+				Multiplication::multiply;
+
+		int pr = product.apply(12, 5);
+
+		System.out.println("Result "+pr);
+ 
+	}
+ 
+}
+ 
+ 
+Method reference to a constructor
+
+======================================
+ 
+public class Hello {
+
+	public Hello(String wish) { // parameterized constructor
+
+		System.out.print(wish);
+
+	}
+ 
+}
+ 
+public interface MyInterface {
+
+	Hello display(String wish);
+
+}
+ 
+public class Example {
+ 
+	public static void main(String[] args) {
+
+		//Method reference to a constructor
+
+		MyInterface ref = Hello::new;
+
+		ref.display("Hello World..!!");
+ 
+	}
+ 
+}
+ 
+****************************************
+
+What are default methods
+
+============================
+ 
+Default methods are the methods implemented in an interface
+
+They are non-abstract, and marked by the modifier default
+
+These methods are available to all the classes which implement this interface
+ 
+Ex:
+
+public interface Welcome {
+
+	default void sayHi() {
+
+		System.out.println("All the best");
+
+	}
+
+	default int addSum(int x, int y) {
+
+		return x+y;
+
+	}
+ 
+}
+ 
+public class Greet implements Welcome {
+ 
+	public static void main(String[] args) {
+
+		new Greet().sayHi();
+
+		int res=new Greet().addSum(5,6);
+
+		System.out.println("Sum is "+res);
+
+	}
+ 
+}
+ 
+public class Greet implements Welcome {
+ 
+	public static void main(String[] args) {
+
+		new Greet().sayHi();
+
+		int res=new Greet().addSum(5,6);
+
+		System.out.println("Sum is "+res);
+
+	}
+ 
+}
+ 
+ 
+******************************************************
+ 
+Date-Time Class
+ 
+import java.time.LocalDate;
+
+import java.time.LocalDateTime;
+
+import java.time.LocalTime;
+
+import java.time.ZoneId;
+
+import java.time.ZonedDateTime;
+
+import java.time.format.DateTimeFormatter;
+ 
+public class Date_Example {
+ 
+	public static void main(String[] args) {
+
+		LocalDate today = LocalDate.now();
+
+		System.out.println(today);
+
+		// To convert String into Date format
+
+		String date1 = "25-09-2023";
+
+		DateTimeFormatter dfr = DateTimeFormatter.ofPattern("[dd-MM-yyyy]");
+
+		LocalDate d2 = LocalDate.parse(date1, dfr);
+
+		System.out.println(d2);
+
+		LocalTime lt = LocalTime.now();
+
+		System.out.println(lt);
+
+		LocalTime lt1 = LocalTime.of(18,45,30);
+
+		System.out.println(lt1);
+
+		LocalDateTime ldt = LocalDateTime.now();
+
+		System.out.println(ldt);
+
+		ZonedDateTime currentzone = ZonedDateTime.now();
+
+		System.out.println(currentzone);
+
+		ZoneId zid = ZoneId.of("US/Pacific");
+
+		ZonedDateTime zdt = ZonedDateTime.now(zid);
+
+		System.out.println(zdt);
+
+	}
+ 
+}
+ 
+
+JDBC
+
+=====
+ 
+JDBC stands for Java Database Connectivity.
+ 
+   Java                          Database
+
+Application     +   Oracle/MySQL/SQL-Server/ PostGres
+ 
+What is Database?
+ 
+Database is a set of information stored in a particular format
+ 
+What is DBMS?
+ 
+DBMS is a Database Management System.
+
+It is a software used to perform CRUD operation
+
+Data is organized in the form of rows and columns
+
+Ex: MySQL, Postgres, Oracle
+ 
+JDBC API 
+
+=========
+ 
+Java Database Connection Application Programming Interface
+
+===========================================================
+ 
+1. Connection Interface : It establish connection between Java Application and Database
+
+2. Statement Interface : It is used to write SQL Queries to get executed
+
+3. ResultSet Interface : All data fetched after executing the Database query is accumulated
+
+                            in ResultSet Interface.
+
+4. DriverManager Class : It is helpful in loading the driverinformation
+ 
+ 
+Junit Testing
+==============
+ 
+SDLC
+=====
+ 
+1. Requirement Analysis / Gathering
+2. Planning
+3. Design
+4. Devlopment
+5. Testing
+6. Deployment
+7. Maintainence
+
+Types of unit testing
+There are two ways to perform unit testing: 1) manual testing 2) automated testing.
+
+1) Manual Testing
+If you execute the test cases manually without any tool support, it is known as manual testing. It is time consuming and less reliable.
+
+2) Automated Testing
+If you execute the test cases by tool support, it is known as automated testing. It is fast and more reliable.
+
+What is Testing?
+ 
+Testing can be defined as the verification or validation for the code that is developed is working 
+as per requirement.
+ 
+Why Testing?
+ 
+To find the errors in the code devloped by the developers
+To fix the bug in the code at the earlier stages of SDLC
+ 
+How do we Testing?
+ 
+We provide different inputs to get the required output.
+We use software tool to check the code is executing perfectly
+Tools used for testing Java Code - JUNIT
+ 
+Types of Testing
+ 
+1. UnitTesting : Smallest individual executable method
+2. System Testing : to check system functionlity
+3. Integration Testing : After integrating all individual modules
+4. Functional Testing : Testing the input/ output values
+ 
+Unit Testing tool used for Java code is JUNIT
+Latest version of JUNIT Testing is 5.x
+It is also called as Jupiter
+ 
+We use annotations to inform the compiler about various phases of testing
+ 
+@Before : Before every test case
+@After : After every test case
+@BeforeClass : Once before any test case runs
+@AfterClass : Once after all testcases run
+@Test : is used to make the compiler understand that it is the test acse method.
+@Test(timeout=1000): annotation specifies that method will be failed if it takes longer than 1000   milliseconds (1 second).
+
+ 
+ 
+Assertions
+===========
+ 
+Assertion methods are used to test the functionality of the the Java methods
+ 
+assertEquals : When java method returns String or int or float or Double or char // positive scenario
+assertNotEquals : Negative scenarion
+ 
+assertTrue : When java method return boolean values
+assertFalse : assertFalse()
+ 
+assertNotNull : When java returns an Object
+assertNull : Nagtive scenario
+ 
+Maven Project
+==============
+ 
+It is built-in tool for building Java Microservice Application
+All dependancies are automatically included in the project
+ 
+Ex:
+public class Calculate {
+	public int addSum(int x , int y) {
+		return x+y;
+	}
+ 
+}
+ 
+ 
+class CalculateTest {
+	Calculate cl;
+	@BeforeEach
+	public void beforetestexec() {
+		System.out.println("Before Every Test");
+	}
+	@AfterEach
+	public void afterTestexec() {
+		System.out.println("After Test case executed");
+	}
+ 
+	@Test
+	void test() {
+		cl= new Calculate();
+		assertEquals(6,cl.addSum(5, 1));
+	}
+ 
+	@Test
+	void test1() {
+		cl=new Calculate();
+		assertNotEquals(5,cl.addSum(6, 7));
+	}
+}
+ 
+Spring Framework
+
+================
+Advantages of spring framework:
+*predefined templates
+*loose coupling
+*easy to test
+*lightweight
+*fast development
+*powerful abstraction
+*declaritive support
+ 
+Framework :
+
+============
+
+It is a collection of classes and Interface
+IOC-Inversion of Controll
+AOP-Aspect oriented programming(cross-cutting concerns)
+ORM-Object Relational Mapping
+RAD-Rapid Application Development
+ In short, Spring Boot is the combination of Spring Framework and Embedded Servers.
+Spring 
+
+=======
+ 
+It was developed by Rod Johnson in the year 2003.
+
+Spring Application starts with POJO.
+
+It is loosely coupled Architecture
+
+It supports Dependancy Injection.
+
+It is done using the Spring Container.
+
+It also supports Autowiring concepts
+ 
+Spring Modules
+
+===============
+ 
+1. Spring Core
+
+2. Spring MVC
+
+3. Spring REST
+
+4. Spring Boot
+
+5. Spring Cloud
+
+6. Spring Security
+ 
+Spring Core
+
+============
+ 
+1. Spring Container : It used manage the life cycle of Bean class (POJO)
+
+                       Creates an Object
+
+                       Binds them with data
+
+			     injects them into application	
+
+			     removes them from the application after use
+Thus, IOC makes the code loosely coupled. In such case, there is no need to modify the code if our logic is moved to new environment.
+In Spring framework, IOC container is responsible to inject the dependency. We provide metadata to the IOC container either by XML file or annotation.
+
+Advantage of Dependency Injection
+makes the code loosely coupled so easy to maintain
+makes the code easy to test
+
+  Life cycle is managed by 
+
+		1. InitializingBean
+
+				afterSetProperties() method
+
+		2. DisposableBean 
+
+				destroy() method
+ 
+2. Dependancy Injection: It allows one object to be injected into another Object or Application
+
+			1. DI by setter method
+
+			2. DI Using Constrcutor
+ 
+3. Autowiring : Ability of injecting the object implicitly is called as Autowiring
+
+			1. Autowire byName
+
+			2. Autowire byType
+
+			3. Autowire byConstructor
+ 
+4. Bean Scope : Visibility of the bean in the application
+
+			1. Singleton
+
+			2. Prototype
+
+			3. session	
+
+			4. request
+
+			5. Auto-detect
+ 
+5. Configuring the Bean into Spring Application
+ 
+			1. Using XML File
+
+			2. Using Java Application
+ 
+6. Reading the Bean info using
+
+			1. ApplicationContext
+
+			2. BeanFactory
+
+Resource resource=new ClassPathResource("applicationContext.xml");  
+BeanFactory factory=new XmlBeanFactory(resource);  
+ApplicationContext context =   
+    new ClassPathXmlApplicationContext("applicationContext.xml");  
+Autowirig using xml
+ 
+Autowiring is a feature of spring framework in which spring Container inject dependencies automatically.
+Autowiring can't be used to inject primitive and String values.It works with refernce only.
+ 
+A(class) -----> B(class)
+ 
+{A wants object of B }
+ 
+autowiring is done by the spring container
+ 
+Autowiring Modes using Xml
+ 
+byName
+byType
+byConstructor
+ 
+Advantages: 
+Automatic
+less code
+ 
+Disadvanges:
+No control of programmer
+it can't be used for primitive & string value   
+
+ApplicationContext in Spring
+ 
+----------------------------------------------------------------------------------------------------
+What is it?
+ApplicationContext is a core interface in the Spring Framework that acts as a container for managing beans (objects).
+ 
+When to Use?
+ApplicationContext for most applications, especially when you need advanced features and better management of your beans
+ 
+ 
+This interface is designed on top of the BeanFactory interface. The ApplicationContext interface is the advanced container that enhances BeanFactory 
+functionality in a more framework-oriented style. While the BeanFactory provides basic functionality for 
+managing and manipulating beans, often in a programmatic way, the ApplicationContext provides extra functionality like MessageSource, Access to resources
+ 
+There are so many implementation classes that can be used such as 
+1. ClassPathXmlApplicationContext
+2. FileSystemXmlApplicationContext
+3. AnnotationConfigWebApplicationContext etc.
+--------------------------------------------------------------------------------------------------------------------------------------
+BeanFactory
+ 
+This is the root interface for accessing a Spring bean container. It is the actual container that instantiates, configures, and manages a number
+of beans. These beans collaborate with one another and thus have dependencies between themselves. These dependencies are reflected in the configuration
+data used by the BeanFactory.
+ 
+The most common implementation class used for this BeanFactory is XmlBeanFactory available in org.springframework.beans.factory.xml package.
+ 
+key features of BeanFactory
+----------------------------------------------------------------------------
+Dependency Injection:
+Allows for injecting dependencies into beans, either through constructor injection or setter injection.
+ 
+Basic Bean Management:
+Manages the lifecycle of beans, including instantiation, configuration, and destruction.
+ 
+Configuration Sources:
+Can read bean definitions from various sources, including XML files and Java annotations. 
+ 
+BEAN SCOPE:
+=========
+In Spring, the scope of a bean is crucial as it determines the lifecycle and visibility of
+
+that bean within the application contexts.
+
+Spring framework supports several bean scopes, allowing for flexibility in bean management and usage.
+ 
+ 
+Bean Scopes refers to the lifecycle of Bean that means when the object of Bean will be instantiated, 
+
+how long does that object live, and how many objects will be created for that bean throughout.
+
+Basically, it controls the instance creation of the bean and it is managed by the spring container.
+ 
+ 
+The spring framework provides five scopes for a bean.
+
+In that two scopes available in both the standard Spring IoC container and 
+
+the web-aware Spring ApplicationContext are:
+
+1) Singleton Scope
+
+2) Prototype Scope
+ 
+We can use other three Scopes only in the context of " web-aware Spring ApplicationContext "
+
+3) Request
+
+4) Session
+
+5) Global Session
+ 
+ 
+1)SINGLETON SCOPE:
+
+==================
+ 
+Description: This is the default scope. A single instance of the bean is created and shared across 
+
+              the entire Spring IoC container.
+ 
+Lifecycle: The singleton bean is instantiated when requested for the first time and remains 
+
+           in memory until the application context is closed.
+ 
+Use Case: Ideal for stateless beans that should be shared across the application.
+ 
+2)PROTOTYPE SCOPE:
+
+=================
+ 
+The prototype scope indicates that a new instance of the bean will be created each time it is requested from 
+
+the application context.
+ 
+This means that every call to getBean() will return a new instance of that bean, rather than a shared instance.
+ 
+For each new request a new instance is created. i.e. A new object is created each time it is injected.
+ 
+Ideal for stateful objects or when different users need their own instance of a bean.
+ 
+
+Spring MVC
+
+==========
+ 
+MVC stands for Model, View and Controller
+ 
+Model --> contains the description of the Bean class
+
+			or
+
+	    Can also be called as Data Model stored in the Database.
+ 
+Ex: Employee, Department, Student, Customer , Product etc
+ 
+View --> How the data is to be rendered on the browser (Web Page).
+ 
+Controller --> class that contains business logic
+
+		   controls the flow of data from front-end to back-end.
+
+			and vice versa.
+ 
+Request and response are the 2 objects that plays an important role 
+
+of any Web Application.
+ 
+Application that runs on any web server is called as Web Application.
+ 
+Webserver ---> Apache Tomcat, Glassfish, webLogic server
+ 
+HTTP ---> Hypertext transfer protocol.
+ 
+Protocol : A set rules or instructions followed during the transfer of
+
+		data or information from source to destination
+ 
+HTTP Methods
+ 
+	POST, GET, PUT, DELETE, PATCH
+ 
+Dispatcher servlet
+
+==================
+
+It is called as front controller.
+
+It acts as a common gateway for all requests and responses.
+
+When the request is made from the user, it reaches DS.
+
+it commands the HandlerMapping to call the appropriate controller
+
+Controller takes the appropriate request and call the service method
+
+service will set the data model and Viewresolverwill select view
+
+Finally , it will render the data for the end-user as response object
+
+ 
+ 
+ 
+ 
+Web Application Multi-Layered Architecture
+
+===========================================
+
+Request ---------> Controller -----------> service -------------> Respository -----------> Database
+ 
+Response <--------- Controller <----------- service <------------- Respository <----------- Database
+ 
+
+Spring REST
+===========
+ 
+Webservice
+===========
+ 
+Web Application vs Web Service
+===============================
+ 
+Web Application is the application that requires human intervention
+ 
+Web service is rendering the service
+ 
+Communication happens between 2 different application
+ 
+SOAP : Simple Object Access Protocol ---> XML Data
+ 
+REST : Representational State Transfer --> Text, XML, Pdf, JSON Object
+ 
+@RequestMapping
+@PathVariable
+@Id
+ 
+ResponseEntity
+ 
+CRUD
+=====
+ 
+Employee, Department, Customer
+ 
+model
+controller
+service
+repository
+exception
+ 
+POSTMAN
+ 
+Spring Application 
+Postman
+ 
+
+CRUD OPERATIONS
+-------------------------
+ 
+@Entity : it maps to the database table, manage the mapping of class to the table.
+ 
+@Id: it is used to indicate the primary key.
+ 
+@Postmapping: used to handle the HTTP POSt requests, map req to specific handler within @RestController
+ 
+@Getmapping: used to handle the get requests.
+ 
+ResponseEntity: allows to specify the HTTP status codes
+@Entity : to connect to the table in the database
+
+Spring Cloud
+
+=============
+ 
+Microservices
+
+=============
+ 
+One Application is made up of several indepandant service	
+
+Each service has its own database
+
+All services will communicate with each other.
+
+Communication between the services are exchange of data objects.
+
+It is distributed environment.
+ 
+ 
+1.Registration -----------------------> Database
+
+2.Login with credentails -------------> Database
+
+3.Search -----------------------------> Database
+
+4.Select the Trip
+
+5.Payment
+
+6.Booked information
+
+7.Logout
+ 
+M1  ------------>	M4
+ 
+M2 ------------>	M5
+ 
+M3 ----------->	M6
+ 
+All the microservices are need to be registered in Eureka Server
+
+All the microservices must enter only through a particular port which 
+
+is passing through API Gateway
+ 
+JWT Security
+---------------------------------------
+ 
+Dependencies
+------------------
+1.Spring Web
+2.Spring DataJPA
+3.Mysql Driver
+4.Spring Boot DevTools
+5.Spring Security
+ 
+Pom.xml
+-----
+spring.application.name=springJWTsecurity
+spring.datasource.url=jdbc:mysql://localhost:3306
+spring.datasource.username=root
+spring.datasource.password=00000000
+ 
+spring.security.user.name=apple
+spring.security.user.password=fruit
+
+
+
+SQL-DBMS
+=======================================================
+DML – Data Manipulation Language
+ 
+DML (Data Manipulation Language) in MySQL is used for managing data within database tables.
+ 
+The SQL commands that deal with the manipulation of data present in the database belong to DML or 
+
+Data Manipulation Language and this includes most of the SQL statements. 
+
+DML is essential for manipulating and managing the data within a relational database.
+ 
+Data Manipulation Language (DML) is a subset of SQL commands used to manipulate data within a database. DML commands allow users to 
+
+insert, update, delete, and retrieve data from database tables. 
+
+These commands are essential for managing and interacting with the data stored in a database.
+ 
+It is the component of the SQL statement that controls access to data and to the database. 
+
+Basically, DCL statements are grouped with DML statements.
+ 
+**List of DML commands
+
+Here are all the main DML (Data Manipulation Language) commands
+
+1. Insert
+
+2.Select
+
+3.update
+
+4.delete
+
+Understanding these operations helps you effectively interact with your database and maintain accurate, reliable data
+ 
+1.INSERT: Used to add new data to a database.
+
+You can insert multiple rows at once by separating each set of values with commas.
+
+If you do not specify columns, you must provide values for all columns in the table.
+ 
+Syntax:
+
+INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);
+ 
+INSERT INTO student (studentId, name, marks, age) 
+
+VALUES (1, 'sree', 85, 20), 
+
+       (2, 'sony', 92, 22),
+
+       (3, 'ammu', 78, 19);
+ 
+2.Select:The SELECT command is used to retrieve data from one or more tables. 
+
+It allows users to specify the columns they want to retrieve and apply conditions to filter the results. The basic syntax is:
+ 
+Syntax:
+
+SELECT column1, column2
+
+FROM table_name
+
+WHERE condition;
+ 
+3.UPDATE: Used to modify existing data in a database.
+
+Always use a WHERE clause to specify which records to update; otherwise, all records will be modified.
+
+You can set a column to a new value, calculate a new value, or modify multiple columns at once.
+ 
+Syntax:
+
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+ 
+UPDATE student set marks=90 where studentId=1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+ 
+3.DELETE: Used to remove data from a database
+
+Use a WHERE clause to specify which records to delete; without it, all records in the table will be deleted.
+
+To delete all records from a table but keep its structure, you can use
+ 
+Syntax:
+
+DELETE FROM table_name WHERE condition;
+ 
+DELETE FROM student 
+
+WHERE studentId = 1;  # Deletes the student with ID 1
+ 
+=======================================================================================================================
+ 
+mysql> create database sree;
+
+Query OK, 1 row affected (0.02 sec)
+ 
+mysql> use sree;
+
+Database changed
+
+mysql> create table student(studentId int,studentname varchar(10), marks int,age int);
+
+Query OK, 0 rows affected (0.03 sec)
+ 
+mysql> insert into student(studentId,studentname,marks,age)values(101,'sony',98,20),(102,'ammu',60,19);
+
+Query OK, 2 rows affected (0.01 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+ 
+mysql> select * from student;
+
++-----------+-------------+-------+------+
+
+| studentId | studentname | marks | age  |
+
++-----------+-------------+-------+------+
+
+|       101 | sony        |    98 |   20 |
+
+|       102 | ammu        |    60 |   19 |
+
++-----------+-------------+-------+------+
+
+2 rows in set (0.01 sec)
+ 
+ 
+mysql> update student set marks=93 where studentId=101;
+
+Query OK, 1 row affected (0.01 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ 
+mysql> select * from student;
+
++-----------+-------------+-------+------+
+
+| studentId | studentname | marks | age  |
+
++-----------+-------------+-------+------+
+
+|       101 | sony        |    93 |   20 |
+
+|       102 | ammu        |    60 |   19 |
+
++-----------+-------------+-------+------+
+
+2 rows in set (0.00 sec)
+ 
+mysql> delete from student where studentId=101;
+
+Query OK, 1 row affected (0.01 sec)
+ 
+mysql> select * from student;
+
++-----------+-------------+-------+------+
+
+| studentId | studentname | marks | age  |
+
++-----------+-------------+-------+------+
+
+|       102 | ammu        |    60 |   19 |
+
++-----------+-------------+-------+------+
+
+1 row in set (0.00 sec)
+
+ 
+SQL Functions:
+===========
+ 
+SQL Functions are built-in programs that are used to perform different operations on the database.
+ 
+Types:
+=====
+ 
+1.Aggregate Functions
+2.Scalar Functions
+ 
+1.Aggregate Functions:
+=================
+Aggregate Functions operate on a set of values and return a single value.
+Different types of aggregate functions are:
+ 
+1.AVG(): Calculates the average value.
+Syntax: SELECT AVG(column_name) FROM table_name;
+ 
+2.COUNT(): Counts the number of rows.	
+Syntax: SELECT COUNT(column_name) FROM table_name;
+ 
+3.MAX(): Retrieves the maximum value from a column.	
+Syntax: SELECT MAX(column_name) FROM table_name;
+ 
+4.MIN(): Retrieves the minimum value from a column.	
+Syntax: SELECT MIN(column_name) FROM table_name;
+ 
+5.SUM(): Calculates the total sum of values in a numeric column.	
+Syntax: SELECT SUM(column_name) FROM table_name;
+ 
+ 
+2.Scalar Functions:
+==============
+ 
+Scalar Functions are built-in functions that operate on a single value and return a single value.
+ 
+Different types of scalar functions are:
+ 
+1.UCASE(): Converts a string to uppercase.	
+Syntax: SELECT UCASE(column_name) FROM table_name;
+ 
+2.LCASE(): Converts a string to lowercase.	
+Syntax: SELECT LCASE(column_name) FROM table_name;
+ 
+3.MID(): Extracts a substring from a string.	
+Syntax: SELECT MID(column_name, start, length) FROM table_name;
+ 
+4.LEN(): Returns the length of a string.	
+Syntax: SELECT LEN(column_name) FROM table_name;
+ 
+5.ROUND(): Rounds a number to a specified number of decimals.	
+Syntax: SELECT ROUND(column_name, decimals) FROM table_name;
+ 
+6.NOW(): Returns the current date and time.
+Syntax: SELECT NOW();
+ 
+mysql> select*from student;
++------+----------+-------+------+
+| Id   | Name     | Marks | Age  |
++------+----------+-------+------+
+|    1 | harsh    |    90 |   19 |
+|    2 | vaish    |    65 |   20 |
+|    3 | chandana |    80 |   19 |
+|    4 | mamatha  |    95 |   21 |
+|    5 | hyndavi  |    85 |   18 |
++------+----------+-------+------+
+5 rows in set (0.00 sec)
+ 
+mysql> select AVG(Marks) from student;
++------------+
+| AVG(Marks) |
++------------+
+|    83.0000 |
++------------+
+1 row in set (0.00 sec)
+ 
+mysql> select SUM(Marks) from student;
++------------+
+| SUM(Marks) |
++------------+
+|        415 |
++------------+
+1 row in set (0.00 sec)
+ 
+mysql> select min(Marks) from student;
++------------+
+| min(Marks) |
++------------+
+|         65 |
++------------+
+1 row in set (0.00 sec)
+ 
+mysql> select max(Marks) from student;
++------------+
+| max(Marks) |
++------------+
+|         95 |
++------------+
+1 row in set (0.00 sec)
+ 
+mysql> select count() from student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') from student' at line 1
+mysql> select count(*) from student;
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.01 sec)
+ 
+mysql> select UCASE(Name) from student;
++-------------+
+| UCASE(Name) |
++-------------+
+| HARSH       |
+| VAISH       |
+| CHANDANA    |
+| MAMATHA     |
+| HYNDAVI     |
++-------------+
+5 rows in set (0.00 sec)
+ 
+mysql> select LCASE(Name) from student;
++-------------+
+| LCASE(Name) |
++-------------+
+| harsh       |
+| vaish       |
+| chandana    |
+| mamatha     |
+| hyndavi     |
++-------------+
+5 rows in set (0.00 sec)
+ 
+mysql> select mid(Name,1,5) from student;
++---------------+
+| mid(Name,1,5) |
++---------------+
+| harsh         |
+| vaish         |
+| chand         |
+| mamat         |
+| hynda         |
++---------------+
+5 rows in set (0.00 sec)
+ 
+mysql> select round(Marks,0) from student;
++----------------+
+| round(Marks,0) |
++----------------+
+|             90 |
+|             65 |
+|             80 |
+|             95 |
+|             85 |
++----------------+
+5 rows in set (0.00 sec)
+ 
+mysql> select now() from student;
++---------------------+
+| now()               |
++---------------------+
+| 2024-10-16 10:26:50 |
+| 2024-10-16 10:26:50 |
+| 2024-10-16 10:26:50 |
+| 2024-10-16 10:26:50 |
+| 2024-10-16 10:26:50 |
++---------------------+
+5 rows in set (0.00 sec)
+ 
+mysql> select length(Name) from student;
++--------------+
+| length(Name) |
++--------------+
+|            5 |
+|            5 |
+|            8 |
+|            7 |
+|            7 |
++--------------+
+5 rows in set (0.00 sec)
+ 
+ 
+GROUP BY:
+ 
+The GROUP BY clause is used in SQL to arrange identical data into groups. 
+
+It is udes to divide the table into multiple groups based on specified column.
+
+It is often used in conjunction with aggregate functions to perform calculations on each group of data.
+ 
+Purpose of GROUP BY:
+
+Aggregation: It allows you to summarize data across multiple records.
+ 
+================================================================
+ 
+Basic Syntax:
+ 
+SELECT column1, aggregate_function(column2)
+
+FROM table_name
+
+WHERE condition
+
+GROUP BY column1
+
+ORDER BY column1;
+ 
+ 
+Key Components
+
+SELECT: Specifies the columns to be returned.
+ 
+aggregate_function: Common functions include:
+ 
+SUM(): Calculates the total.
+
+COUNT(): Counts the number of rows.
+
+AVG(): Calculates the average.
+
+MAX(): Finds the maximum value.
+
+MIN(): Finds the minimum value.
+ 
+FROM: Specifies the table from which to retrieve the data.
+ 
+WHERE: Filters records before grouping (optional).
+ 
+GROUP BY: Specifies the column(s) to group by.
+ 
+ORDER BY: Sorts the results (optional).
+ 
+==============================================================
+ 
+Example Table:
+ 
+Query:
+ 
+CREATE TABLE sales (
+
+    id INT PRIMARY KEY,
+
+    product VARCHAR(50),
+
+    quantity INT,
+
+    price DECIMAL(10, 2)
+
+);
+ 
+INSERT INTO sales (id, product, quantity, price) VALUES (1, 'Apples', 10, 2.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (2, 'Bananas', 20, 1.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (3, 'Apples', 15, 2.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (4, 'Oranges', 25, 3.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (5, 'Bananas', 10, 1.00);
+ 
+ 
+Result:
+ 
+id	product	quantity	price
+
+1	Apples	10	        2
+
+2	Bananas	20	        1
+
+3	Apples	15	        2
+
+4	Oranges	25	        3
+
+5	Bananas	10	        1
+ 
+============================================================
+ 
+Example Queries
+
+1. Total Quantity Sold by Product
+ 
+ 
+SELECT product, SUM(quantity) AS total_quantity
+
+FROM sales
+
+GROUP BY product;
+ 
+ 
+This query groups the data by product and calculates the total quantity sold for each product.
+
+SUM(quantity) provides the total for each group.
+ 
+Result:
+ 
+product	   total_quantity
+
+Apples	    25
+
+Bananas	    30
+
+Oranges         25
+ 
+===========================================================================================
+ 
+2. Count of Sales Transactions by Product
+ 
+SELECT product, COUNT(*) AS number_of_sales
+
+FROM sales
+
+GROUP BY product;
+ 
+Explanation:
+ 
+This query counts how many times each product appears in the sales table.
+
+COUNT(*) counts all rows for each group.
+ 
+Result:
+ 
+product 	number_of_sales
+
+Apples	           2
+
+Bananas	           2
+
+Oranges                1
+ 
+==================================================================
+ 
+3. Average Price by Product
+ 
+SELECT product, AVG(price) AS average_price
+
+FROM sales
+
+GROUP BY product;
+ 
+Explanation:
+ 
+This query calculates the average price for each product.
+
+AVG(price) computes the mean price of the grouped products.
+ 
+Result:
+ 
+product	   average_price
+
+Apples	      2
+
+Bananas           1
+
+Oranges	      3
+ 
+================================================================
+ 
+4. Max  and Min Price
+ 
+Query:
+ 
+SELECT MAX(price) AS max_price
+
+FROM your_table_name;
+ 
+select Max(price) as max_price from sales;
+ 
+ 
+Result:
+ 
+max_price
+ 
+  3.00
+ 
+ 
+SELECT MIN(price) AS min_price
+
+FROM your_table_name;
+ 
+ 
+select Min(price) as min_price from sales;
+ 
+Result:
+ 
+Min_price
+ 
+1.00
+ 
+Using HAVING with GROUP BY
+
+The HAVING clause is used to filter groups based on aggregate values, unlike the WHERE clause, which filters rows before grouping.
+ 
+Example: Products with Total Quantity Greater Than 20
+ 
+SELECT product, SUM(quantity) AS total_quantity
+
+FROM sales
+
+GROUP BY product
+
+HAVING SUM(quantity) > 20;
+ 
+Explanation:
+ 
+This query groups by product and filters to show only those products with a total quantity greater than 20.
+
+Result:
+ 
+product	   total_quantity
+
+Bananas	      30
+
+Apples	      25
+ 
+ 
+SELECT product, price, SUM(quantity) AS total_quantity
+
+FROM sales
+
+GROUP BY product, price;
+ 
+Non-Aggregated Columns: All selected columns that are not used in an aggregate function must be included in the GROUP BY clause.
+ 
+Order of Execution: SQL processes GROUP BY after WHERE but before ORDER BY.
+ 
+ 
+ 
+==========================================================================================
+ 
+ 
+ORDER BY:
+ 
+The ORDER BY clause is used in SQL to sort the result set of a query based on one or more columns.
+
+This sorting can be done in ascending (ASC) or descending (DESC) order.
+ 
+Purpose of ORDER BY
+ 
+Data Presentation: It organizes the results, making them easier to read and analyze.
+
+Data Analysis: Sorting can help identify trends, patterns, or outliers in the data.
+ 
+============================================================================
+ 
+Basic Syntax
+ 
+SELECT column1, column2, ...
+
+FROM table_name
+
+WHERE condition
+
+ORDER BY column1 [ASC|DESC], column2 [ASC|DESC], ...;
+ 
+ 
+Key Components:-
+ 
+SELECT: Specifies the columns to be retrieved.
+ 
+FROM: Specifies the table from which to retrieve the data.
+ 
+WHERE: Filters records before sorting (optional).
+ 
+ORDER BY: Specifies the column(s) to sort by.
+ 
+ASC: Sorts in ascending order (default).
+ 
+DESC: Sorts in descending order.
+ 
+================================================
+ 
+Example Table:-
+ 
+ 
+CREATE TABLE sales (
+
+    id INT PRIMARY KEY,
+
+    product VARCHAR(50),
+
+    quantity INT,
+
+    price DECIMAL(10, 2)
+
+);
+ 
+ 
+INSERT INTO sales (id, product, quantity, price) VALUES (1, 'Apples', 10, 2.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (2, 'Bananas', 20, 1.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (3, 'Apples', 15, 2.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (4, 'Oranges', 25, 3.00);
+
+INSERT INTO sales (id, product, quantity, price) VALUES (5, 'Bananas', 10, 1.00);
+ 
+ 
+Result Table:
+ 
+ 
+id	product	quantity	price
+
+1	Apples	10	        2
+
+2	Bananas	20	        1
+
+3	Apples	15	        2
+
+4	Oranges	25	        3
+
+5	Bananas	10	        1
+ 
+=================================================================
+ 
+Example Queries:
+ 
+1. Sorting by a Single Column
+
+Query: Sort by product in ascending order.
+ 
+ 
+SELECT * FROM sales
+
+ORDER BY product ASC;
+ 
+Explanation: This query retrieves all columns from the sales table and sorts the results alphabetically by the product column.
+ 
+Result:
+ 
+id	product	quantity	price
+
+1	Apples	10	2
+
+3	Apples	15	2
+
+2	Bananas	20	1
+
+5	Bananas	10	1
+
+4	Oranges	25	3
+ 
+========================================================================
+ 
+2. Sorting by Multiple Columns
+
+Query: Sort by product and then by price in descending order.
+ 
+ 
+SELECT * FROM sales
+
+ORDER BY product ASC, price DESC;
+ 
+Explanation: This query sorts the results first by the product column in ascending order, and for products with the same name, it sorts by price in descending order.
+ 
+Result:
+ 
+id	product	quantity	price
+
+1	Apples	10	       2
+
+3	Apples	15	       2
+
+2	Bananas	20	       1
+
+5	Bananas	10	       1
+
+4	Oranges	25	       3
+ 
+=================================================================
+ 
+ 
+3. Sorting by a Numeric Column
+
+Query: Sort by quantity in descending order.
+ 
+ 
+SELECT * FROM sales
+
+ORDER BY quantity DESC;
+ 
+Explanation: This query retrieves all records from the sales table, sorted by the quantity column in descending order, so the highest quantities appear first.
+ 
+Result:
+ 
+id	product	quantity	price
+
+4	Oranges	25	        3
+
+2	Bananas	20	        1
+
+3	Apples	15	        2
+
+1	Apples	10	        2
+
+5	Bananas	10	        1
+ 
+4. Sorting with Filtering
+
+You can also combine ORDER BY with a WHERE clause.
+ 
+Query: Get products with a quantity greater than 10, sorted by price.
+ 
+ 
+SELECT * FROM sales
+
+WHERE quantity > 10
+
+ORDER BY price ASC;
+ 
+Explanation: This query retrieves records where the quantity is greater than 10, then sorts the results by price in ascending order.
+ 
+Result:
+ 
+id	product	quantity	price
+
+2	Bananas	   20	       1
+
+4	Oranges	   25	       2
+
+3	Apples	   15	       3
+ 
+Default Sorting: If you don’t specify ASC or DESC, SQL defaults to ascending order (ASC).
+ 
+Null Values: By default, null values are sorted first in ascending order and last in descending order.
+ 
+Order of Execution: SQL processes ORDER BY after WHERE and GROUP BY clauses.
+ 
+ 
+mysql> select * from sales;
+
++----+---------+----------+-------+
+
+| id | product | quantity | price |
+
++----+---------+----------+-------+
+
+|  1 | Apples  |       10 |  2.00 |
+
+|  2 | Bananas |       20 |  1.00 |
+
+|  3 | Apples  |       15 |  2.00 |
+
+|  4 | Oranges |       25 |  3.00 |
+
+|  5 | Bananas |       10 |  1.00 |
+
++----+---------+----------+-------+
+
+5 rows in set (0.00 sec)
+ 
+mysql> select product,count(*) as Number_of_sales from sales group by product;
+
++---------+-----------------+
+
+| product | Number_of_sales |
+
++---------+-----------------+
+
+| Apples  |               2 |
+
+| Bananas |               2 |
+
+| Oranges |               1 |
+
++---------+-----------------+
+
+3 rows in set (0.00 sec)
+ 
+mysql> select product, count(*) as number_of_sales from sales group by product;
+
++---------+-----------------+
+
+| product | number_of_sales |
+
++---------+-----------------+
+
+| Apples  |               2 |
+
+| Bananas |               2 |
+
+| Oranges |               1 |
+
++---------+-----------------+
+
+3 rows in set (0.00 sec)
+ 
+mysql> select product,avg(price)as average_price from sales group by product;
+
++---------+---------------+
+
+| product | average_price |
+
++---------+---------------+
+
+| Apples  |      2.000000 |
+
+| Bananas |      1.000000 |
+
+| Oranges |      3.000000 |
+
++---------+---------------+
+
+3 rows in set (0.00 sec)
+ 
+mysql> select max(price) as max_price from sales;
+
++-----------+
+
+| max_price |
+
++-----------+
+
+|      3.00 |
+
++-----------+
+
+1 row in set (0.00 sec)
+ 
+mysql> select min(price)as min_price from sales;
+
++-----------+
+
+| min_price |
+
++-----------+
+
+|      1.00 |
+
++-----------+
+
+1 row in set (0.00 sec)
+ 
+mysql> select product,sum(quantity) as Total_quantity from sales group by product having sum(quantity)>20;
+
++---------+----------------+
+
+| product | Total_quantity |
+
++---------+----------------+
+
+| Apples  |             25 |
+
+| Bananas |             30 |
+
+| Oranges |             25 |
+
++---------+----------------+
+
+3 rows in set (0.00 sec)
+ 
+mysql> select * from sales order by product asc;
+
++----+---------+----------+-------+
+
+| id | product | quantity | price |
+
++----+---------+----------+-------+
+
+|  1 | Apples  |       10 |  2.00 |
+
+|  3 | Apples  |       15 |  2.00 |
+
+|  2 | Bananas |       20 |  1.00 |
+
+|  5 | Bananas |       10 |  1.00 |
+
+|  4 | Oranges |       25 |  3.00 |
+
++----+---------+----------+-------+
+
+5 rows in set (0.00 sec)
+ 
+mysql> select * from sales order by product asc,price desc;
+
++----+---------+----------+-------+
+
+| id | product | quantity | price |
+
++----+---------+----------+-------+
+
+|  1 | Apples  |       10 |  2.00 |
+
+|  3 | Apples  |       15 |  2.00 |
+
+|  2 | Bananas |       20 |  1.00 |
+
+|  5 | Bananas |       10 |  1.00 |
+
+|  4 | Oranges |       25 |  3.00 |
+
++----+---------+----------+-------+
+
+5 rows in set (0.00 sec)
+ 
+mysql> select * from sales order by price;
+
++----+---------+----------+-------+
+
+| id | product | quantity | price |
+
++----+---------+----------+-------+
+
+|  2 | Bananas |       20 |  1.00 |
+
+|  5 | Bananas |       10 |  1.00 |
+
+|  1 | Apples  |       10 |  2.00 |
+
+|  3 | Apples  |       15 |  2.00 |
+
+|  4 | Oranges |       25 |  3.00 |
+
++----+---------+----------+-------+
+ 
+
+ 
+JOINS:
+ 
+It is used to retrieve data from multiple tables.
+
+A JOIN statement is used to combine rows from two or more tables, based on a related column between them.
+
+Joins are used with SELECT statement.
+ 
+TYPES:
+
+1.Inner Join
+
+2.Left outer join
+
+3.right outer join
+
+4.full outer join
+
+5.Cross join
+ 
+1.INNER JOIN:-
+
+------------------------
+ 
+Returns only the rows that have matching values in both tables.
+
+Syntax:
+
+SELECT table1.column1,table1.column2,table2.column1,....
+
+FROM table1 
+
+INNER JOIN table2
+
+ON  table1.matching_column = table2.matching_column;
+
+=====================================================================
+
+2.LEFT OUTER JOIN:
+
+---------------------------------
+ 
+Returns all rows from the left table and the matched rows from the right table. If there is no match, NULL values are returned for columns from the right table.
+ 
+SYNTAX:
+
+SELECT table1.column1,table1.column2,table2.column1,....
+
+FROM table1 
+
+LEFT JOIN table2
+
+ON table1.matching_column = table2.matching_column;
+ 
+ 
+=====================================================================
+
+3.RIGHT OUTER JOIN:
+
+----------------------------------
+ 
+Returns all rows from the right table and the matched rows from the left table. If there is no match, NULL values are returned for columns from the left table.
+ 
+SYNTAX:
+
+SELECT table1.column1,table1.column2,table2.column1,....
+
+FROM table1 
+
+RIGHT JOIN table2
+
+ON table1.matching_column = table2.matching_column;
+ 
+============================================================
+
+4.FULL OUTER JOIN:
+
+--------------------------------
+ 
+Returns all rows when there is a match in one of the tables. MySQL does not support FULL OUTER JOIN directly, but you can achieve the same result using a combination of LEFT JOIN and RIGHT JOIN with UNION.
+ 
+SYNTAX:
+
+SELECT columns
+
+FROM table1
+
+LEFT JOIN table2 ON table1.common_column = table2.common_column
+ 
+UNION
+ 
+SELECT columns
+
+FROM table1
+
+RIGHT JOIN table2 ON table1.common_column = table2.common_column;
+ 
+ 
+==================================================================
+
+5.CROSS JOIN:
+
+-------------------------
+ 
+Returns the Cartesian product of the two tables, meaning it combines all rows from the first table with all rows from the second table.
+
+SYNTAX:
+
+SELECT column-lists  
+
+FROM table1  
+
+CROSS JOIN table2;  
+ 
+create database demo;
+
+use demo;
+
+/*create table */
+
+create table employee(empid int,name varchar(10),age int);
+ 
+desc employee;
+ 
+/*inserting values*/
+
+insert into employee values (1, 'Bhavya', 20),(2, 'Ramya', 24),(3, 'Kavya', 28);
+ 
+/*retrival for data*/
+
+select * from employee;
+ 
+/*sub query for retrival (24 28)*/
+
+select name from employee where empid  in(select empid from employee where age>20);
+ 
+/*sub query to find max age i.e usage of aggrate functions in sub query 28*/
+
+select *from employee where age=(select max(age) from employee);
+ 
+/*sub query to find min age i.e usage of aggrate functions in sub query*/
+
+select *from employee where age=(select min(age) from employee);
+ 
+/*to find second maximum age**/
+
+select max(age) from employee where age<(select max(age)from employee);
+ 
+/*to find second manimum age*/
+
+select min(age) from employee where age>(select min(age)from employee);
+ 
+/*working with multiple tables*/
+
+create table employeenew(empid int primary key,name varchar(10),age int);
+
+insert into employeenew values (1, 'Bhavya', 20),(2, 'Ramya', 24),(3, 'Kavya', 28);
+
+create table dep(depid int primary key,depname varchar(10),empid int,foreign key(empid)references employeenew(empid));
+
+insert into dep values (10, 'software', 1),(20, 'IT', 2),(30, 'testing', 3);
+
+select * from employeenew where empid in(select empid from dep where depid=10);
+ 
+/*insert in subquery*/
+
+create table employeenew1(empid int primary key,name varchar(10),age int);
+
+insert into employeenew1 select *from employeenew where empid in(select empid from employeenew); 
+
+   select * from employeenew1;
+
+
+JDBC
+============
+To create a database connection in Java, we must follow the sequence given below:
+
+Import JDBC packages.
+Load and register the JDBC driver.
+Open a connection to the database.
+Create a statement object to perform a query.
+Execute the statement object and return a query resultset.
+Process the resultset.
+Close the resultset and statement objects.
+Close the connection.
+
+
+There are following stages in a JDBC program:
+
+Register the driver
+Connecting to a database
+Preparing SQL statements in Java
+Executing the SQL statements on the database
+Retrieving the results
+Closing the connection
+
+JDBC Savepoint helps us in creating checkpoints in a transaction and we can rollback to that particular checkpoint.
+
+
+There are 5 steps to connect any java application with the database using JDBC. These steps are as follows:
+Register the Driver class(forName)
+Create connection(getConnection)
+Create statement(createStatement)
+Execute queries(executeQuery)
+Close connection(close)
+
+superclass for java==Object
+superclass for exception==Throwable
+superclass for collections==AbstractCollections
